@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Products - Zing</title>
+  <link rel="stylesheet" href="product.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <div class="logo"><i class="fas fa-arrow-left"></i> <a href="index.html">Back</a></div>
+    </nav>
+  </header>
+
+  <main class="products-section container">
+    <h1>Our Food Selection</h1>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search for pastries...">
+    </div>
+    <div id="product-list" class="product-grid"></div>
+  </main>
+
+  <script>
+    // const products = Array.from({ length: 20 }, (_, i) => ({
+    //   id: i + 1,
+    //   name: `Pastry Delight #${i + 1}`,
+    //   description: "A delicious vegetarian pastry made with love and quality ingredients.",
+    //   price: `$${(Math.random() * 10 + 5).toFixed(2)}`,
+    //   image: `https://source.unsplash.com/400x300/?pastry,bakery,${i}`
+    // }));
+
+    // const productList = document.getElementById('product-list');
+
+    // function renderProducts(items) {
+    //   productList.innerHTML = items.map(product => `
+    //     <div class="product-card">
+    //       <img src="${product.image}" alt="${product.name}">
+    //       <h3>${product.name}</h3>
+    //       <p>${product.description}</p>
+    //       <span class="price">${product.price}</span>
+    //     </div>
+    //   `).join('');
+    // }
+
+    // document.getElementById('searchInput').addEventListener('input', function(e) {
+    //   const keyword = e.target.value.toLowerCase();
+    //   const filtered = products.filter(p => p.name.toLowerCase().includes(keyword));
+    //   renderProducts(filtered);
+    // });
+
+    // renderProducts(products);
+    // product.js
+
+document.addEventListener("DOMContentLoaded", () => {
+  const productList = document.getElementById("product-list");
+  const searchInput = document.getElementById("searchInput");
+
+  // Fetch recipes from DummyJSON API
+  fetch("https://dummyjson.com/recipes?limit=20")
+    .then(res => res.json())
+    .then(data => {
+      const products = data.recipes.map(recipe => ({
+        title: recipe.name,
+        description: recipe.instructions.slice(0, 100) + '...',
+        price: `$${(Math.random() * 10 + 5).toFixed(2)}`,
+        image: recipe.image
+      }));
+
+      renderProducts(products);
+
+      searchInput.addEventListener("input", () => {
+        const keyword = searchInput.value.toLowerCase();
+        const filtered = products.filter(product =>
+          product.title.toLowerCase().includes(keyword)
+        );
+        renderProducts(filtered);
+      });
+    })
+    .catch(err => {
+      productList.innerHTML = "<p>Failed to load products.</p>";
+      console.error("Error fetching products:", err);
+    });
+
+  function renderProducts(items) {
+    productList.innerHTML = items
+      .map(
+        product => `
+        <div class="product-card">
+          <img src="${product.image}" alt="${product.title}">
+          <h3>${product.title}</h3>
+          <p>${product.description}</p>
+          <span class="price">${product.price}</span>
+        </div>
+      `
+      )
+      .join("");
+  }
+});
+
+  </script>
+</body>
+</html>

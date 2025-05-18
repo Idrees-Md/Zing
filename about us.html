@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us | Zing</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-pQ2DdPwv5eY5AcjHtJrt0mEqDmtNGzRZpiVtBPo6xZ7gJOqJX7jOa0K18E+s+MlWqV/pUN+cLF2tSb8ZHQWq0g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="about us.css" />
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+
+</head>
+<body>
+  <header class="header">
+    <nav class="container" style="background-color:rgb(126, 120, 112); width: 100%;">
+        <div class="container nav-container">
+            <div class="logo">ZING</div>
+            <nav class="nav-links" >
+              <a href="index.html">Home</a>
+              <a href="product.html">Product</a>
+              <a href="blog.html">Blog</a>
+              <a href="index.html" class="cta-btn">Shop Now</a>
+            </nav>
+          </div>
+  </header>
+
+  <main class="container">
+    <section class="about-section fade-in">
+      <h2>About Us</h2>
+      <p style="color: antiquewhite;">
+        <i class="fas fa-bread-slice icon"></i>
+        At <strong style="color: darkkhaki;">Zing</strong>, we believe food should spark joy — not just for your taste buds but for your soul.
+        Every vegetarian pastry we make is crafted with care, tradition, and a pinch of old-fashioned warmth.
+      </p>
+
+      <p style="color: antiquewhite;">
+        <i class="fas fa-leaf icon" ></i>
+        Founded with passion and baked with love, Zing grew from a small kitchen to stores worldwide, delivering wholesome
+        vegetarian pastries that blend classic flavors with a modern twist.
+      </p>
+
+      <p style="color: antiquewhite;">
+        <i class="fas fa-globe-americas icon"></i>
+        Our commitment is to bring joy, excitement, and quality to millennials everywhere, all wrapped up in our signature grey brand style.
+      </p>
+
+      <div class="values fade-in delay-1">
+        <h3>Our Values</h3>
+        <ul>
+          <li><i class="fas fa-heart"></i> Made with Love</li>
+          <li><i class="fas fa-seedling"></i> Vegetarian & Ethical</li>
+          <li><i class="fas fa-globe"></i> Worldwide Availability</li>
+          <li><i class="fas fa-clock"></i> Timeless Tradition</li>
+        </ul>
+      </div>
+
+      <!-- New: Founder's message -->
+      <section class="founder-message fade-in delay-2">
+        <h3>From Our Founder</h3>
+        <div class="founder-content">
+          <img src="images/about_founders.jpeg" alt="Founder photo" class="founder-photo" />
+          <blockquote>
+            "Our mission has always been simple — to share the love and warmth of vegetarian pastries with every corner of the world. Each bite is a piece of our heart."
+            <footer>- Emily Sanders, Founder</footer>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- New: Company timeline -->
+      <section class="timeline fade-in delay-3">
+        <h3>Our Journey</h3>
+        <ul class="timeline-list">
+          <li>
+            <span class="timeline-year">2015</span>
+            <i class="fas fa-birthday-cake timeline-icon"></i>
+            <p>Zing was born in a small kitchen with a simple recipe and big dreams.</p>
+          </li>
+          <li>
+            <span class="timeline-year">2018</span>
+            <i class="fas fa-store timeline-icon"></i>
+            <p>First store opened, bringing our pastries to local communities.</p>
+          </li>
+          <li>
+            <span class="timeline-year">2021</span>
+            <i class="fas fa-globe timeline-icon"></i>
+            <p>Expanded distribution worldwide, reaching millennial customers everywhere.</p>
+          </li>
+          <li>
+            <span class="timeline-year">2025</span>
+            <i class="fas fa-heart-circle timeline-icon"></i>
+            <p>Committed to sustainable packaging and continued product innovation.</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- New: Testimonials slider -->
+      <section class="testimonials fade-in delay-4">
+        <h3>What Our Customers Say</h3>
+        <div class="testimonial-slider">
+          <div class="testimonial active">
+            <p>"Zing’s pastries are a game changer! So delicious and guilt-free."</p>
+            <cite>- Mia T.</cite>
+          </div>
+          <div class="testimonial">
+            <p>"The perfect blend of tradition and freshness. I can’t get enough!"</p>
+            <cite>- Liam R.</cite>
+          </div>
+          <div class="testimonial">
+            <p>"I love knowing these treats are made with love and care, and taste incredible."</p>
+            <cite>- Sophia M.</cite>
+          </div>
+          <button class="testimonial-prev" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+          <button class="testimonial-next" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </section>
+      <div class="social-icons-hero">
+        <a href="https://www.facebook.com/YourPage" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/YourProfile" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://twitter.com/YourProfile" target="_blank" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+      
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Zing. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Fade in animation on scroll (same as before)
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+      threshold: 0,
+      rootMargin: "0px 0px -100px 0px"
+    };
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('appear');
+        appearOnScroll.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+
+    // Testimonials slider
+    const testimonials = document.querySelectorAll('.testimonial');
+    const prevBtn = document.querySelector('.testimonial-prev');
+    const nextBtn = document.querySelector('.testimonial-next');
+    let currentTestimonial = 0;
+
+    function showTestimonial(index) {
+      testimonials.forEach((t, i) => {
+        t.classList.toggle('active', i === index);
+      });
+    }
+
+    prevBtn.addEventListener('click', () => {
+      currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+      showTestimonial(currentTestimonial);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+      showTestimonial(currentTestimonial);
+    });
+
+    // Newsletter form submit (fake)
+    const form = document.getElementById('newsletter-form');
+    const formMessage = document.getElementById('form-message');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const email = form.email.value.trim();
+      if(email){
+        formMessage.textContent = `Thank you for subscribing, ${email}!`;
+        form.reset();
+      } else {
+        formMessage.textContent = 'Please enter a valid email.';
+      }
+    });
+  </script>
+</body>
+</html>
