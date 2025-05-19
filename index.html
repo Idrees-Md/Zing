@@ -11,6 +11,11 @@
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 />
+  <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 </head>
 <body>
@@ -82,7 +87,18 @@
       </div>
     </div>
   </section>
-
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="images/user-[1-3].jpeg" /></div>
+      <div class="swiper-slide"><img src="images/product_berry_tart.jpeg" /></div>
+      <div class="swiper-slide" ><img src="images/product_fruit_pie.jpeg" /></div>
+      <div class="swiper-slide"><img src="images/product_choco_puff.jpeg" /></div>
+      <div class="swiper-slide"><img src="images/icon_tradition.jpeg" /></div>
+      <!-- Add more slides as needed -->
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  
   <!-- ========== SECTION 5: CONTACT FORM ========== -->
   <section class="contact" id="contact">
     <div class="container contact-grid">
@@ -121,5 +137,27 @@
       </div>
     </div>
   </footer>
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      centeredSlides: true,
+      slidesPerView: 1.4, // Show partial sides
+      spaceBetween: 20,   // Space between slides
+      breakpoints: {
+        768: {
+          slidesPerView: 2.2, // More visible on wider screens
+        }
+      }
+    });
+  </script>
+  
 </body>
 </html>
